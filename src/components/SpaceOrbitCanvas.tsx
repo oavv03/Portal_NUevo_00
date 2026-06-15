@@ -161,8 +161,8 @@ export const SpaceOrbitCanvas: React.FC = () => {
 
     // Draw loop
     const render = () => {
-      // Clear canvas with deep dark void and gentle alpha trails
-      ctx.fillStyle = "rgba(3, 0, 10, 0.16)";
+      // Clear canvas with light trails fading into slate-50 background
+      ctx.fillStyle = "rgba(248, 250, 252, 0.16)";
       ctx.fillRect(0, 0, width, height);
 
       // Smooth mouse damping
@@ -264,7 +264,7 @@ export const SpaceOrbitCanvas: React.FC = () => {
       });
 
       // Octahedron Edges
-      ctx.strokeStyle = "rgba(16, 185, 129, 0.45)"; // Emerald-500
+      ctx.strokeStyle = "rgba(5, 150, 105, 0.55)"; // Emerald-600
       ctx.lineWidth = 1.0;
       octahedronEdges.forEach(([startIdx, endIdx]) => {
         const start = projectedOcta[startIdx];
@@ -293,7 +293,7 @@ export const SpaceOrbitCanvas: React.FC = () => {
         const avgZ = (start[2] + end[2]) / 2;
         const opacity = Math.max(0.08, Math.min(0.65, 1.0 - (avgZ + 60) / 120));
 
-        ctx.strokeStyle = `rgba(14, 165, 233, ${opacity.toFixed(3)})`; // Sky Blue 0ea5e9
+        ctx.strokeStyle = `rgba(2, 132, 199, ${opacity.toFixed(3)})`; // Sky Blue 0284c7 (Sky-600)
         ctx.lineWidth = 1.5;
 
         // Add subtle neon glow effect on front lines
