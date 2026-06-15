@@ -111,7 +111,7 @@ export default function App() {
         <div id="action-container" className="pt-6 border-t border-white/5">
           <a 
             id="back-to-home-link"
-            href="https://www.tribunal-electoral.gob.pa/" 
+            href="https://tribunalcontigo.com/" 
             className="w-full bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-medium text-xs sm:text-sm px-6 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-cyan-950/50"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover/btn:-translate-x-1" />
