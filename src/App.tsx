@@ -1,9 +1,6 @@
 import React from "react";
 import { 
   ArrowLeft, 
-  Twitter, 
-  Instagram, 
-  Github, 
   Copy, 
   Check 
 } from "lucide-react";
@@ -33,9 +30,9 @@ export default function App() {
       {/* Main Container Card */}
       <main 
         id="main-container"
-        className="relative z-10 w-full max-w-lg bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-12 shadow-2xl transition-all duration-500 ease-out hover:border-emerald-500/35 group"
+        className="relative z-10 w-full max-w-2xl bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-12 shadow-2xl transition-all duration-500 ease-out hover:border-emerald-500/35 group"
         style={{ 
-          boxShadow: "0 0 25px rgba(16, 185, 129, 0.05), inset 0 0 15px rgba(14, 165, 233, 0.03)" 
+          boxShadow: "0 0 35px rgba(16, 185, 129, 0.07), inset 0 0 20px rgba(14, 165, 233, 0.04)" 
         }}
       >
         
@@ -54,7 +51,7 @@ export default function App() {
           </h1>
           <div className="h-[2px] w-16 bg-gradient-to-r from-cyan-500 to-emerald-400 mx-auto my-6 rounded-full"></div>
           
-          <div className="text-slate-350 font-light leading-relaxed text-sm sm:text-base max-w-md mx-auto space-y-4">
+          <div className="text-slate-350 font-light leading-relaxed text-sm sm:text-base max-w-xl mx-auto space-y-4">
             <p>
               Si requiere obtener una cita para tramitar su carné de residente permanente por primera vez, puede hacerlo a través de los siguientes medios:
             </p>
@@ -119,31 +116,6 @@ export default function App() {
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover/btn:-translate-x-1" />
             Volver a la página inicial
-          </a>
-        </div>
-
-        {/* Embedded social networks anchors */}
-        <div id="social-networks-container" className="flex justify-center gap-4 mt-8 pt-6 border-t border-white/5">
-          <a 
-            href="#" 
-            className="p-2.5 rounded-xl bg-white/[0.01] hover:bg-white/[0.08] text-slate-400 hover:text-white border border-white/5 hover:border-white/20 transition-all duration-300"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-4 h-4" />
-          </a>
-          <a 
-            href="#" 
-            className="p-2.5 rounded-xl bg-white/[0.01] hover:bg-white/[0.08] text-slate-400 hover:text-white border border-white/5 hover:border-white/20 transition-all duration-300"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-4 h-4" />
-          </a>
-          <a 
-            href="#" 
-            className="p-2.5 rounded-xl bg-white/[0.01] hover:bg-white/[0.08] text-slate-400 hover:text-white border border-white/5 hover:border-white/20 transition-all duration-300"
-            aria-label="Github"
-          >
-            <Github className="w-4 h-4" />
           </a>
         </div>
       </main>
