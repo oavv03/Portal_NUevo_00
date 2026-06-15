@@ -1,0 +1,6 @@
+{
+  "name": "Portal de Citas - Residente Permanente",
+  "description": "Portal interactivo en órbita para solicitar tu cita de residente permanente por primera vez en el Tribunal Electoral de Panamá.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
