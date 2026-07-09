@@ -8,14 +8,49 @@ import { SpaceOrbitCanvas } from "./components/SpaceOrbitCanvas.tsx";
 
 export default function App() {
   const [copiedText, setCopiedText] = React.useState<string | null>(null);
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
-  const handleCopy = (text: string, label: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedText(label);
-    setTimeout(() => {
+  const handleCopy = async (text: string, label: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+        setCopiedText(label);
+      } else {
+        // Fallback robust and secure for restricted sandbox environments
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        textArea.style.top = "0px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const success = document.execCommand("copy");
+        document.body.removeChild(textArea);
+        if (success) {
+          setCopiedText(label);
+        }
+      }
+    } catch (err) {
+      console.error("Error copy operation:", err);
+    }
+
+    timeoutRef.current = setTimeout(() => {
       setCopiedText(null);
     }, 2500);
   };
+
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden bg-slate-50 text-slate-800 font-sans selection:bg-emerald-500/10 selection:text-emerald-900">
